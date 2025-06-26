@@ -3,15 +3,10 @@ pipeline {
 
     environment {
         ARTIFACTORY_SERVER = 'artifactory'  // Set in Jenkins > Configure System
-        ARTIFACTORY_REPO = 'python-local'      // Must exist in JFrog
+        ARTIFACTORY_REPO = 'my-python-generic'      // Must exist in JFrog
     }
 
     stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/your-user/my-python-app.git' // or use local repo
-            }
-        }
 
         stage('Build Python Package') {
             steps {
